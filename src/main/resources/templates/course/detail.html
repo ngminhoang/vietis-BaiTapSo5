@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="ABC Group" />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Course</title>
+  <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}" />
+  <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="sb-nav-fixed">
+  <div th:replace="layout/header :: header"></div>
+  <div id="layoutSidenav">
+    <div th:replace="layout/sidebar :: sidebar"></div>
+    <div id="layoutSidenav_content">
+      <main>
+        <div class="container-fluid px-4">
+          <h1 class="mt-4">Course</h1>
+          <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item"><a th:href="@{/}">Dashboard</a></li>
+            <li class="breadcrumb-item active">Course</li>
+          </ol>
+          <form action="#">
+            <table class="table">
+              <tbody>
+                <tr>
+                  <th scope="row">Tên khóa học</th>
+                  <td th:text="${course.name}"></td>
+                </tr>
+                <tr>
+                  <th scope="row">Nội dung</th>
+                  <td><pre th:text="${course.description}"></pre></td>
+                </tr>
+                <tr>
+                  <th scope="row">Độ dài</th>
+                  <td th:text="${course.maxStudent}"></td>
+                </tr>
+                <tr>
+                  <th scope="row">Tác giả</th>
+                  <td th:text="${course.instructor}"></td>
+                </tr>
+                <tr>
+                  <th scope="row">Ảnh đại diện</th>
+                  <td><img style="max-height: 150px;" alt="avatar" /></td>
+                </tr>
+                <tr>
+                  <th scope="row">Thời gian tạo</th>
+                  <td th:text="${course.createdAt}"></td>
+                </tr>
+                <tr>
+                  <th scope="row">Thời gian cập nhật cuối</th>
+                  <td th:text="${course.updatedAt}"></td>
+                </tr>
+                <tr>
+                  <th scope="row">Người tạo</th>
+                  <td th:text="${course.createdBy}"></td>
+                </tr>
+                <tr>
+                  <th scope="row">Người cập nhật cuối</th>
+                  <td th:text="${course.updatedBy}"></td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="d-flex justify-content-end mt-3">
+              <a class="btn btn-warning mx-2" th:href="@{/course}">Quay về</a>
+            </div>
+          </form>
+        </div>
+      </main>
+      <div th:replace="layout/footer :: footer"></div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    crossorigin="anonymous"></script>
+  <script th:src="@{/js/scripts.js}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+  <script th:src="@{/assets/demo/chart-area-demo.js}"></script>
+  <script th:src="@{/assets/demo/chart-bar-demo.js}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js"
+    crossorigin="anonymous"></script>
+  <script th:src="@{/js/datatables-simple-demo.js}"></script>
+</body>
+
+</html>
